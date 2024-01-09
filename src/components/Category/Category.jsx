@@ -30,6 +30,7 @@ const Category = () => {
 
 
   return (
+   
     <div>
       <h3>Category</h3>
       <TextField label="category name" variant="outlined" name="Cname" value={inputs.Cname}onChange={inpuHandler}/><br/><br/>

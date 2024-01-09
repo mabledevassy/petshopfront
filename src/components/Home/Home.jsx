@@ -10,7 +10,7 @@ const Home = () => {
       <Box sx={{flexGrow:1}}>
         <AppBar position="static">
             <Toolbar> 
-                {/* <IconButton
+                <IconButton
                 size="large"
                 edge="end"
                 color="inherit"
@@ -19,15 +19,12 @@ const Home = () => {
                     <MenuIcon/>
                     <AdminPanelSettingsIcon/>
         
-                </IconButton> */}
+                </IconButton>
                  
                 {/* <Paper> */}
-        <MenuList>
-          <MenuItem>Category</MenuItem>
-          <MenuItem>Subcategory</MenuItem>
-          <MenuItem>Categoryview</MenuItem>
-          <MenuItem>Subcategoryview</MenuItem>
-        </MenuList>
+                
+        
+       
       {/* </Paper> */}
                 <Typography variant="h6" component="div"sx={{flexGrow:1}}>
                     PetNet
@@ -48,6 +45,21 @@ const Home = () => {
                 <Button color="inherit">SIGN UP</Button>
             </Toolbar>
         </AppBar>
+        <MenuList>
+        <h3 align="left">Registeration</h3>
+        
+          <MenuItem>Category</MenuItem>
+          <MenuItem>Subcategory</MenuItem>
+        
+          <h3 align="left">Views</h3>
+          
+
+          <MenuItem>Categoryview</MenuItem>
+          <MenuItem>Subcategoryview</MenuItem>
+          </MenuList>
+          
+    
+        
       </Box>
     </div>
   )
