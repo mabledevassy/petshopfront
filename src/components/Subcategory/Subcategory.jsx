@@ -1,6 +1,9 @@
 import { Button, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import './Subcategory.css'
+import Topbar from '../Adminpanel/Topbar'
+import Sidebar from '../Adminpanel/Sidebar'
 
 const Subcategory = () => {
   
@@ -40,7 +43,9 @@ const Subcategory = () => {
     }
   
   return (
-    <div>
+    <div className='tt'>
+      <Topbar/>
+      <Sidebar/>
       <h2>Subcategory</h2>
     <TextField label="Subcategory Name" name="Sname" variant="filled" value={inputs.Sname}onChange={inputHandler}/><br /><br />
     

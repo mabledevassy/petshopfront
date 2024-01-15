@@ -3,6 +3,9 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import EditIcon from '@mui/icons-material/Edit';
 import Subcategoryedit from './Subcategoryedit';
+import Topbar from '../Adminpanel/Topbar';
+import Sidebar from '../Adminpanel/Sidebar';
+import './subview.css'
 
 const Subcategorydetails = () => {
     var[sub,setSub]=useState([]);
@@ -21,9 +24,11 @@ const Subcategorydetails = () => {
         setUpdate(true)
     }
     var result=
-    <div>
+    <div className='bb'>
+        <Topbar/>
+      <Sidebar/>
       <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <Table sx={{ minWidth:260 }} >
                 <TableHead>
                     <TableRow>
                         <TableCell>Subcategoryname</TableCell>

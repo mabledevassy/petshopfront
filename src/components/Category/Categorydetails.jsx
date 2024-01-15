@@ -3,6 +3,9 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import EditIcon from '@mui/icons-material/Edit';
 import Categoryedit from './Categoryedit';
+import Topbar from '../Adminpanel/Topbar';
+import Sidebar from '../Adminpanel/Sidebar';
+import './Categoryview.css'
 
 const Categorydetails = () => {
   var [category, setCategory] = useState([]);
@@ -21,7 +24,9 @@ const Categorydetails = () => {
     setUpdate(true)
   }
   var result =
-    <div>
+    <div className='bb'>
+       <Topbar/>
+      <Sidebar/>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>

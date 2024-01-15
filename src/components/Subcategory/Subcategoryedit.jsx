@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Button, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material'
 import axios from 'axios'
+import Sidebar from '../Adminpanel/Sidebar'
+import Topbar from '../Adminpanel/Topbar'
+import './Subcategory.css'
 
 
 
@@ -27,7 +30,7 @@ const Subcategoryedit = (props) => {
     }
     const addHandler=()=>{
         if(props.method==='put'){
-            axios.put("http://localhost:3005/edit/"+inputs._id,inputs)
+            axios.put("http://localhost:3005/edits/"+inputs._id,inputs)
             .then(response=>{
                 console.log("post data"+response.data)
                 alert("Success")
@@ -37,7 +40,9 @@ const Subcategoryedit = (props) => {
         }
     }
   return (
-    <div>
+    <div className='tt'>
+      <Topbar/>
+      <Sidebar/>
     <h2>Subcategory</h2>
   <TextField label="Subcategory Name" name="Sname" variant="filled" value={inputs.Sname}onChange={inputHandler}/><br /><br />
   

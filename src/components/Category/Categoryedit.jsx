@@ -1,6 +1,9 @@
 import { Button, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material'
 import axios from 'axios'
 import React, { useState } from 'react'
+import Topbar from '../Adminpanel/Topbar'
+import Sidebar from '../Adminpanel/Sidebar'
+import './Category.css'
 
 const Categoryedit = (props) => {
     var[inputs,setInputs]=useState(props.data)
@@ -23,7 +26,9 @@ const Categoryedit = (props) => {
         }
     }
     return (
-        <div>
+        <div className='aa'>
+           <Topbar/>
+      <Sidebar/>
           <h3>Category</h3>
           <TextField label="category name" variant="outlined" name="Cname" value={inputs.Cname}onChange={inputHandler}/><br/><br/>
           <FormControl sx={{ m: 1, minWidth: 120 }}>
