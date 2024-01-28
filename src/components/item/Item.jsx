@@ -1,11 +1,17 @@
-import { Button, FormControl, InputLabel, MenuItem, Select } from '@mui/material'
+import { Button, FormControl, InputLabel, MenuItem, Select, TextField  } from '@mui/material'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import './item.css'
+import Sidebar from '../Adminpanel/Sidebar'
+import Topbar from '../Adminpanel/Topbar'
+import { Textarea } from '@mui/joy'
 
 const Item = () => {
   var[inputs,setInputs]=useState({
     "Category":'',
-    "Subcategory":''
+    "Subcategory":'',
+    "Description":'',
+    "Price":''
   })
   var[selectedimage,setSelectedimage]=useState(null);
   
@@ -55,8 +61,8 @@ const Item = () => {
       const formdata=new FormData();
       formdata.append('Category',inputs.Category);
       formdata.append('Subcategory',inputs.Subcategory);
-      // formdata.append('Age',inputs.Age);
-      // formdata.append('Course',inputs.Course);
+      formdata.append('Description',inputs.Description);
+      formdata.append('Price',inputs.Price);
       formdata.append('image1',selectedimage)
       fetch('http://localhost:3005/inew',
       {
@@ -75,7 +81,9 @@ const Item = () => {
   
 
   return (
-    <div>
+    <div className='vv'>
+      <Sidebar/>
+      <Topbar/>
       <h3>Item Registeration</h3>
        <FormControl sx={{ m: 1, minWidth: 120 }}>
   <InputLabel id="demo-simple-select-label">Category</InputLabel>
@@ -105,8 +113,10 @@ const Item = () => {
         )
       })
     }
-  </Select>
+  </Select><br /><br />
+  <Textarea name="Description" placeholder="Description" variant="outlined" value={inputs.Description} onChange={inputHandler}/>
 </FormControl><br/><br/>
+<TextField label="Price" variant="outlined" name="Price" value={inputs.Price} onChange={inputHandler}/><br/><br/>
 <label>Upload file</label>
         <input type="file" onChange={handleImage}></input>
         <br /><br />
