@@ -65,11 +65,11 @@ const Itemdetails = () => {
             </Table>
         </TableContainer>
     </div>
-  if (update) 
+  if(update)
   {
-    result=<Itemedit data={selected}method='put'/>
-    return(result)
+  result=<Itemedit data={selected}method='put'/>
   }
+  return(result)
 }
 
 export default Itemdetails

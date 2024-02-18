@@ -12,6 +12,7 @@ const Item = () => {
     "Subcategory":'',
     "Description":'',
     "Price":''
+    
   })
   var[selectedimage,setSelectedimage]=useState(null);
   

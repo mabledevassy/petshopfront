@@ -22,16 +22,18 @@ const checkData = async (event) => {
     event.preventDefault(); 
  
     try { 
-     const response = await axios.post("http://localhost:3005/Loginsearch",{ 
-      username: inputs.username, 
-      password: inputs.password, 
+     const response = await 
+     axios.post("http://localhost:3005/Loginsearch",
+     { 
+      username:inputs.username, 
+      password:inputs.password, 
     }) 
     if (response.data.success) { 
         alert('Login successful'); 
         navigate('/Home'); 
       }  
       else { 
-        alert('Invalid email and Password. Please try again.'); 
+        alert('Invalid username and Password. Please try again.'); 
         console.log(response.data); 
  
       } 
