@@ -20,8 +20,9 @@ const Subcategory = () => {
     },[])
 
     var[inputs,setInputs]=useState({
+      "cid":'',
       "Sname":'',
-      "Category":''
+     
     })
   
     const inputHandler =(event) =>{
@@ -53,12 +54,12 @@ const Subcategory = () => {
   <InputLabel id="demo-simple-select-label">Category</InputLabel>
   <Select
    labelId="demo-simple-select-label"
-    name='Category'value={inputs.Category} onChange={inputHandler}>
+    name='cid'value={inputs.Category} onChange={inputHandler}>
     {
       ca.map((value,index)=>{
         return(
           <MenuItem key={index}
-          value={value.Cname} >{value.Cname}</MenuItem>
+          value={value._id} >{value.Cname}</MenuItem>
         )
       })
     }

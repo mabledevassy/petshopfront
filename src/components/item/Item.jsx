@@ -8,8 +8,10 @@ import { Textarea } from '@mui/joy'
 
 const Item = () => {
   var[inputs,setInputs]=useState({
+    
     "Category":'',
     "Subcategory":'',
+  
     "Description":'',
     "Price":''
     
@@ -47,21 +49,11 @@ const Item = () => {
       inputs.image1=file;
   }
   
-    //   const addHandler=() =>{
-    //     console.log("Clicked")
-  
-    //     console.log(inputs)
-    //     axios.post("http://localhost:3005/inew",inputs)
-    //     .then((response)=>{
-    //       alert("Record Saved")
-    //     })
-    //     .catch(err=>console.log(err))
-        
-    // }
+    
     const savedata=()=>{
       const formdata=new FormData();
       formdata.append('Category',inputs.Category);
-      formdata.append('Subcategory',inputs.Subcategory);
+      formdata.append('Subcategory',inputs.sid);
       formdata.append('Description',inputs.Description);
       formdata.append('Price',inputs.Price);
       formdata.append('image1',selectedimage)
@@ -105,7 +97,7 @@ const Item = () => {
   <InputLabel id="demo-simple-select-label">Subcategory</InputLabel>
   <Select
    labelId="demo-simple-select-label"
-    name='Subcategory'value={inputs.Subcategory} onChange={inputHandler}>
+    name='sid'value={inputs.Subcategory} onChange={inputHandler}>
     {
       subca.map((value,index)=>{
         return(

@@ -44,7 +44,7 @@ const Subcategorydetails = () => {
                                 <TableCell>
                                     {row.Sname}
                                 </TableCell>
-                                <TableCell>{row.Category}</TableCell>
+                                <TableCell>{row.subc[0].Cname}</TableCell>
                                 <TableCell><EditIcon onClick={()=>updateValues(row)}/></TableCell>
                                
                             </TableRow>

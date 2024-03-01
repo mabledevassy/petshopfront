@@ -16,6 +16,7 @@ const Itemdetails = () => {
         axios.get("http://localhost:3005/iview")
         .then(response=>{
             setItem(response.data)
+            console.log(response.data)
         })
         .catch(err=>console.log(err))
 
@@ -48,7 +49,7 @@ const Itemdetails = () => {
                                 <TableCell>
                                     {row.Category}
                                 </TableCell>
-                                <TableCell>{row.Subcategory}</TableCell>
+                                <TableCell>{row.it[0] ? row.it[0].Sname : ""}</TableCell>
                                 <TableCell>{row.Description}</TableCell>
                                 <TableCell>{row.Price}</TableCell>
                                 <TableCell>
