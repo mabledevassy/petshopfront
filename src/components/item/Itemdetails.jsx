@@ -4,7 +4,7 @@ import Sidebar from '../Adminpanel/Sidebar'
 import Topbar from '../Adminpanel/Topbar'
 import './itemview.css'
 import axios from 'axios'
-import{Buffer} from 'buffer';
+
 import EditIcon from '@mui/icons-material/Edit';
 import Itemedit from './Itemedit'
 
@@ -47,13 +47,13 @@ const Itemdetails = () => {
                             <TableRow
                                 key={pos}>
                                 <TableCell>
-                                    {row.Category}
+                                    {row.itemca.Cname}
                                 </TableCell>
-                                <TableCell>{row.it[0] ? row.it[0].Sname : ""}</TableCell>
+                                <TableCell>{row.itemsub.Sname}</TableCell>
                                 <TableCell>{row.Description}</TableCell>
                                 <TableCell>{row.Price}</TableCell>
                                 <TableCell>
-                                    <img src={`data:image/jpeg;base64,${Buffer.from(row.image1.data).toString('base64')}`}
+                                    <img src={`data:${row.image1.contentType};base64,${row.image1.data}`}
                                     width="50" height="50" alt="Error"/>
                                 </TableCell>
                                 <TableCell><EditIcon onClick={()=>updateValues(row)}/></TableCell>

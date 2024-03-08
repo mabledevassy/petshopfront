@@ -10,6 +10,7 @@ import Subcategorydetails from './components/Subcategory/Subcategorydetails';
 import Home from './components/Adminpanel/Home';
 import Item from './components/item/Item';
 import Itemdetails from './components/item/Itemdetails';
+import Orderdetails from './components/Order/Orderdetails';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path={'/viewdetails'}element={<Categorydetails method='get'/>}></Route>
         <Route path={'/sview'}element={<Subcategorydetails method='get'/>}></Route>
         <Route path={'/itview'}element={<Itemdetails method='get'/>}></Route>
+        <Route path={'/orderview'}element={<Orderdetails method='get'/>}></Route>
         
        <Route path='/s'element={<Subcategory method='post'/>}/>
       <Route path='/c'element={<Category method='post'/>}/>

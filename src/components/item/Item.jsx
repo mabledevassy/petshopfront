@@ -9,9 +9,9 @@ import { Textarea } from '@mui/joy'
 const Item = () => {
   var[inputs,setInputs]=useState({
     
-    "Category":'',
-    "Subcategory":'',
-  
+  //  "Category":'',
+  //  "Subcategory":'',
+  "sid":'',
     "Description":'',
     "Price":''
     
@@ -52,8 +52,8 @@ const Item = () => {
     
     const savedata=()=>{
       const formdata=new FormData();
-      formdata.append('Category',inputs.Category);
-      formdata.append('Subcategory',inputs.sid);
+      // formdata.append('cid',inputs.Category);
+      formdata.append('sid',inputs.sid);
       formdata.append('Description',inputs.Description);
       formdata.append('Price',inputs.Price);
       formdata.append('image1',selectedimage)
@@ -82,12 +82,12 @@ const Item = () => {
   <InputLabel id="demo-simple-select-label">Category</InputLabel>
   <Select
    labelId="demo-simple-select-label"
-    name='Category'value={inputs.Category} onChange={inputHandler}>
+    name='sid'value={inputs.Category} onChange={inputHandler}>
     {
       ca.map((value,index)=>{
         return(
           <MenuItem key={index}
-          value={value.Cname} >{value.Cname}</MenuItem>
+          value={value._id} >{value.Cname}</MenuItem>
         )
       })
     }
@@ -102,7 +102,7 @@ const Item = () => {
       subca.map((value,index)=>{
         return(
           <MenuItem key={index}
-          value={value.Sname} >{value.Sname}</MenuItem>
+          value={value._id} >{value.Sname}</MenuItem>
         )
       })
     }

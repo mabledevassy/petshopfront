@@ -18,6 +18,7 @@ const Sidebar = () => {
        <a href="/viewdetails"><li>Category View</li></a>
        <a href="/sview"><li>Subcategory View</li></a>
        <a href="/itview"><li>Item View</li></a>
+       <a href="/orderview"><li>Order View</li></a>
       </ul>
       
     </div>
