@@ -40,6 +40,9 @@ const Orderdetails = () => {
                 <TableRow
                   key={pos}>
                   <TableCell>
+                    {row.itemid}
+                  </TableCell>
+                  <TableCell>
                     {row.Fname}
                   </TableCell>
                   <TableCell>{row.Address}</TableCell>
